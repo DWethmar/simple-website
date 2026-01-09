@@ -27,3 +27,7 @@ services:
       - simple-web
       - monitoring
 
+networks:
+  simple-web:
+  monitoring:
+    driver: bridge
