@@ -12,6 +12,6 @@ services:
     image: cloudflare/cloudflared:latest
     command: tunnel run
     environment:
-      - TUNNEL_TOKEN=YOUR_TUNNEL_TOKEN
+      - TUNNEL_TOKEN=${TUNNEL_TOKEN}
     depends_on:
       - web
