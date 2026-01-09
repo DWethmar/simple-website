@@ -1,0 +1,17 @@
+version: "3.9"
+
+services:
+  web:
+    image: nginx:alpine
+    volumes:
+      - ./index.html:/usr/share/nginx/html/index.html:ro
+    expose:
+      - "8081"
+
+  cloudflared:
+    image: cloudflare/cloudflared:latest
+    command: tunnel run
+    environment:
+      - TUNNEL_TOKEN=YOUR_TUNNEL_TOKEN
+    depends_on:
+      - web
