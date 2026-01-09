@@ -12,9 +12,11 @@ services:
 
   cloudflared:
     image: cloudflare/cloudflared:latest
-    command: tunnel run
+    command: tunnel --metrics 0.0.0.0:2000 run
     environment:
       - TUNNEL_TOKEN=${TUNNEL_TOKEN}
+    ports:
+      - "2000:2000"
     depends_on:
       - web
     restart: unless-stopped
