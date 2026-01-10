@@ -31,6 +31,7 @@ services:
       - "2000:2000"
     depends_on:
       - web
+      - personal-website
     restart: unless-stopped
     networks:
       - simple-web
