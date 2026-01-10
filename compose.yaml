@@ -13,6 +13,15 @@ services:
       - simple-web
       - monitoring
 
+  personal-website:
+    image: ghcr.io/dwethmar/website:master
+    expose:
+      - 80
+    restart: unless-stopped
+    networks:
+      - simple-web
+      - monitoring
+
   cloudflared:
     image: cloudflare/cloudflared:latest
     command: tunnel --metrics 0.0.0.0:2000 run
