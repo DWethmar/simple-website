@@ -13,7 +13,7 @@ services:
       - simple-web
       - monitoring
 
-  personal-website:
+  personalwebsite:
     image: ghcr.io/dwethmar/website:master
     expose:
       - 80
