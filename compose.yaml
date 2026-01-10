@@ -15,8 +15,8 @@ services:
 
   personalwebsite:
     image: ghcr.io/dwethmar/website:master
-    expose:
-      - 80
+    ports:
+      - "8808:80"
     restart: unless-stopped
     networks:
       - simple-web
