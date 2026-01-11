@@ -6,8 +6,8 @@ services:
     volumes:
       - ./web:/usr/share/nginx/html:ro
       - ./nginx.conf:/etc/nginx/nginx.conf
-    expose:
-      - 80
+    ports:
+      - "8807:80"
     restart: unless-stopped
     networks:
       - simple-web
